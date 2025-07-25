@@ -35,7 +35,12 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. Install required packages:
 ```bash
-pip install opencv-python streamlit numpy pillow
+pip install -r requirements.txt
+```
+
+**Note**: For local development, you can also install packages individually:
+```bash
+pip install opencv-python-headless streamlit numpy pillow
 ```
 
 ### Running the Application
@@ -69,9 +74,28 @@ The app will open in your browser at `http://localhost:8501`
 ## 📦 Dependencies
 
 - `streamlit` - Web app framework
-- `opencv-python` - Computer vision library
+- `opencv-python-headless` - Computer vision library (headless version for cloud deployment)
 - `numpy` - Numerical computing
 - `pillow` - Image processing
+
+## 🚀 Deployment
+
+### Streamlit Cloud
+
+This app is optimized for deployment on Streamlit Cloud:
+
+1. Fork this repository
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Connect your GitHub account
+4. Deploy the app using this repository
+5. The app will automatically install dependencies from `requirements.txt`
+
+### Local Deployment
+
+For local development, follow the installation steps above and run:
+```bash
+streamlit run app.py
+```
 
 ## 🤝 Contributing
 
